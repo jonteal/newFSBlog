@@ -1,5 +1,5 @@
 import "./Header.css";
-import plant from "../images/plant.jpg";
+import plant from "../../images/plant.jpeg";
 
 const Header = () => {
     return (
