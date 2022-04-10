@@ -6,13 +6,38 @@ import Settings from './pages/Settings/Settings';
 import Signup from './pages/Signup/Signup';
 import Single from './pages/Single/Single';
 import Write from './pages/Write/Write';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Topbar />
-      <Signup />
-    </div>
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+        <Route exact path='/signup'>
+          <Signup />
+        </Route>
+        <Route exact path='/login'>
+          <Login />
+        </Route>
+        <Route exact path='/write'>
+          <Write />
+        </Route>
+        <Route exact path='/settings'>
+          <Settings />
+        </Route>
+        <Route exact path='/post/:postId'>
+          <Single />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
