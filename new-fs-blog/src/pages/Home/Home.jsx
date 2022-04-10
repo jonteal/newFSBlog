@@ -1,6 +1,7 @@
 // import Sidebar from "../../Sidebar/Sidebar";
 import "./Home.css";
 import Header from "../../components/Header/Header";
+import Sidebar from "../../components/Sidebar/Sidebar";
 
 const Home = () => {
     return (
@@ -8,7 +9,7 @@ const Home = () => {
         <Header />
         <div className="home">
             {/* <Posts /> */}
-            {/* <Sidebar /> */}
+            <Sidebar />
         </div>
         </>
     );
