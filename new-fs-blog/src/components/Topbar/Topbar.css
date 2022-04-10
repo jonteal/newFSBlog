@@ -8,6 +8,7 @@
     align-items: center;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    z-index: 999;
 }
 
 .topLeft,
