@@ -1,4 +1,4 @@
-import './Sidebar.css';
+import "./Sidebar.css";
 import sloth from "../../images/sloth.jpeg";
 import { RiFacebookBoxFill } from "react-icons/ri";
 import { RiPinterestFill } from "react-icons/ri";
