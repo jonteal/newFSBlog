@@ -20,7 +20,7 @@ const SinglePost = () => {
                     <span className="singlePostDate">Author: <b>1 hour ago</b></span>
 
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, repellat sequi eaque nostrum possimus assumenda fugiat recusandae nisi a obcaecati voluptatibus quam numquam inventore suscipit animi distinctio necessitatibus praesentium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, repellat sequi eaque nostrum possimus assumenda fugiat recusandae nisi a obcaecati voluptatibus quam numquam inventore suscipit animi distinctio necessitatibus praesentium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, repellat sequi eaque nostrum possimus assumenda fugiat recusandae nisi a obcaecati voluptatibus quam numquam inventore suscipit animi distinctio necessitatibus praesentium!</p>
+                <p className="singlePostDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, repellat sequi eaque nostrum possimus assumenda fugiat recusandae nisi a obcaecati voluptatibus quam numquam inventore suscipit animi distinctio necessitatibus praesentium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, repellat sequi eaque nostrum possimus assumenda fugiat recusandae nisi a obcaecati voluptatibus quam numquam inventore suscipit animi distinctio necessitatibus praesentium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, repellat sequi eaque nostrum possimus assumenda fugiat recusandae nisi a obcaecati voluptatibus quam numquam inventore suscipit animi distinctio necessitatibus praesentium!</p>
             </div>
         </div>
     );
