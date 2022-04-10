@@ -12,7 +12,7 @@ const Login = () => {
                 <button className="loginButton">Login</button>
 
             </form>
-            <button className="loginRegisterButton">Register</button>
+            <button className="loginSignupButton">Signup</button>
         </div>
     );
 }
