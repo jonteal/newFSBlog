@@ -1,9 +1,11 @@
 import './Write.css';
 import { RiAddFill } from "react-icons/ri";
+import paddle from "../../images/paddle.jpeg";
 
 const Write = () => {
     return (
         <div className="write">
+            <img src={paddle} alt="paddleboarding" className='writeImg' />
             <form className='writeForm'>
             <div className="writeFormGroup">
                 <label htmlFor="fileInput">
