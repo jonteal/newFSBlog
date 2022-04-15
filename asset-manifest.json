@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/newFSBlog/static/css/main.8bbdeead.css",
+    "main.js": "/newFSBlog/static/js/main.59ba4aa9.js",
+    "static/media/plant.jpeg": "/newFSBlog/static/media/plant.0690a2f22ef968254fd4.jpeg",
+    "static/media/mountains.jpeg": "/newFSBlog/static/media/mountains.a50db70a72b2bfe9ecc2.jpeg",
+    "static/media/paddle.jpeg": "/newFSBlog/static/media/paddle.5db24cd416839b692485.jpeg",
+    "static/media/sloth.jpeg": "/newFSBlog/static/media/sloth.83be1ab896a614c25140.jpeg",
+    "static/media/ocean.jpeg": "/newFSBlog/static/media/ocean.72945efdf4391a7f1fad.jpeg",
+    "static/media/me.jpeg": "/newFSBlog/static/media/me.d679085960b764e41ca7.jpeg",
+    "static/media/sunnycliff.avif": "/newFSBlog/static/media/sunnycliff.0bb372c918c7de46c55a.avif",
+    "index.html": "/newFSBlog/index.html",
+    "main.8bbdeead.css.map": "/newFSBlog/static/css/main.8bbdeead.css.map",
+    "main.59ba4aa9.js.map": "/newFSBlog/static/js/main.59ba4aa9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8bbdeead.css",
+    "static/js/main.59ba4aa9.js"
+  ]
+}
