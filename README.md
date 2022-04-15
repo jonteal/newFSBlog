@@ -1,4 +1,4 @@
-# The Daily Dev - Tech Blog
+# Personal Blog
 
 <a name="description"></a>
 ## Description
