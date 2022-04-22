@@ -10,9 +10,13 @@ router.put('/:id', async (req,res) => {
             req.body.password = await bcrypt.hash(req.body.password, salt);
         }
         try {
-            const updatedUser = await User.findByIdAndUpdate(req.params.id, {
-                $set: req.body, 
-            }, { new: true });
+            const updatedUser = await User.findByIdAndUpdate(
+                req.params.id, 
+                {
+                    $set: req.body, 
+                }, 
+                { new: true }
+            );
             res.status(200).json(updatedUser);
         } catch(err) {
             res.status(500).json(err);
@@ -24,6 +28,18 @@ router.put('/:id', async (req,res) => {
 });
 
 // DELETE
-
+router.delete('/:id', async (req,res) => {
+    if(req.body.userId === req.params.id) {
+        try {
+            await User.findByIdAndDelete(req.params.id)
+            res.status(200).json("User has been deleted!");
+        } catch(err) {
+            res.status(500).json(err);
+        }
+    } else {
+        res.status(401).json("You can only delete your account!")
+    }
+    
+});
 
 module.exports = router;
