@@ -25,7 +25,6 @@ router.put('/:id', async (req,res) => {
     } else {
         res.status(401).json("You can only update your account!")
     }
-    
 });
 
 // DELETE
