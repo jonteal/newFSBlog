@@ -1,12 +1,15 @@
 import "./Post.css";
 import { Link } from 'react-router-dom';
-import mountain from "../../images/mountains.jpeg";
+// import mountain from "../../images/mountains.jpeg";
 
 const Post = ({post}) => {
     return (
         <div className="post">
             {post.photo && (
-                <img className="postImg" src={mountain} alt="mountain" />
+                <img 
+                    className="postImg" 
+                    src={post.photo} 
+                    alt="" />
             )}
         
         <div className="postInfo">
