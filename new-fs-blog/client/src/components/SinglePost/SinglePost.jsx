@@ -1,26 +1,48 @@
 import "./SinglePost.css";
 import ocean from '../../images/ocean.jpeg';
-import { RiEditLine } from "react-icons/ri"
-import { RiDeleteBin6Line } from "react-icons/ri"
+import { RiEditLine } from "react-icons/ri";
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { useLocation } from 'react-router';
+import { useEffect } from "react";
+import { useState } from 'react';
+import axios from 'axios';
 
 
 const SinglePost = () => {
+    const location = useLocation()
+    const path = location.pathname.split('/')[2];
+    const [post, setPost] = useState({})
+
+    useEffect(() => {
+        const getPost = async () => {
+            const res = await axios.get('/posts/' + path);
+            setPost(res.data);
+        };
+        getPost();
+    }, [path]);
+
     return (
         <div className="singlePost">
             <div className="singlePostWrapper">
-                <img src={ocean} alt="" className="singlePostImg" />
-                <h1 className="singlePostTitle">Lorem ipsum dolor sit amet.
+                {post.photo && (
+                    <img 
+                        src={post.photo} 
+                        alt="" 
+                        className="singlePostImg" 
+                    />
+                )}
+                <h1 className="singlePostTitle">{post.title}
                     <div className="singlePostEdit">
                         <RiEditLine className="singlePostIcon" />
                         <RiDeleteBin6Line className="singlePostIcon" />
                     </div>
                 </h1>
                 <div className="singlePostInfo">
-                    <span className="singlePostAuthor">Author: <b>Jon</b></span>
-                    <span className="singlePostDate">Author: <b>1 hour ago</b></span>
+                    <span className="singlePostAuthor">Author: <b>{post.username}</b></span>
+                    <span className="singlePostDate">Author: <b>{new Date(post.createdAt).toDateString()}</b></span>
 
                 </div>
-                <p className="singlePostDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, repellat sequi eaque nostrum possimus assumenda fugiat recusandae nisi a obcaecati voluptatibus quam numquam inventore suscipit animi distinctio necessitatibus praesentium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, repellat sequi eaque nostrum possimus assumenda fugiat recusandae nisi a obcaecati voluptatibus quam numquam inventore suscipit animi distinctio necessitatibus praesentium! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo maiores, repellat sequi eaque nostrum possimus assumenda fugiat recusandae nisi a obcaecati voluptatibus quam numquam inventore suscipit animi distinctio necessitatibus praesentium!</p>
+                <p className="singlePostDesc">{post.desc}</p>
             </div>
         </div>
     );
