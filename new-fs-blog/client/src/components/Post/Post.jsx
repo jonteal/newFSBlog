@@ -1,6 +1,5 @@
 import "./Post.css";
 import { Link } from 'react-router-dom';
-// import mountain from "../../images/mountains.jpeg";
 
 const Post = ({post}) => {
     return (
@@ -19,7 +18,7 @@ const Post = ({post}) => {
                 ))
             }
             </div>
-            <Link to={`post/${post._id}`}>
+            <Link to={`post/${post._id}`} className='link'>
                 <span className="postTitle">{post.title}</span>
             </Link>
             <hr />
