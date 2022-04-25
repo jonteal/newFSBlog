@@ -6,6 +6,7 @@ import { RiInstagramFill } from "react-icons/ri";
 import { RiTwitterFill } from "react-icons/ri";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     const [cats, setCats] = useState([]);
@@ -33,7 +34,9 @@ const Sidebar = () => {
             <span className="sidebarTitle">CATEGORIES</span>
             <ul>
                 {cats.map(c => (
-                    <li className="sidebarListItem">{c.name}</li>
+                    <Link to={`/?cat=${c.name}`} className='link'>
+                        <li className="sidebarListItem">{c.name}</li>
+                    </Link>
                 ))}
             </ul>
         </div>
