@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
 
+// Link with all pages isn't working. Must refresh page to get new page to actually render
+
 
 const Signup = () => {
 
