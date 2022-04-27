@@ -24,7 +24,6 @@ const Login = () => {
         }
     }
 
-    console.log(user)
     return (
         <div className="login">
             <span className="loginTitle">Login</span>
@@ -43,7 +42,7 @@ const Login = () => {
                     placeholder="Enter your password..." 
                     ref={passwordRef}
                 />
-                <button className="loginPageButton" type="submit">Login</button>
+                <button className="loginPageButton" type="submit" disabled={isFetching}>Login</button>
 
             </form>
             <button className="loginRegisterButton">
