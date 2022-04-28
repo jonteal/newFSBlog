@@ -5,7 +5,6 @@ import { RiPinterestFill } from "react-icons/ri";
 import { RiInstagramFill } from "react-icons/ri";
 import { RiTwitterFill } from "react-icons/ri";
 import { RiSearchLine } from "react-icons/ri";
-import Me from "../../images/me.jpeg";
 import { Link } from 'react-router-dom';
 import { Context } from "../../context/Context";
 
