@@ -1,37 +1,38 @@
-.signup {
+.register {
     height: calc(100vh - 50px);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     background: linear-gradient(
-        rgba(255,255,255,0.2),
-        rgba(255,255,255,0.2)
-        ), url("https://images.unsplash.com/photo-1649590242138-2d56b3a48c5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80") no-repeat left center;
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("https://images.unsplash.com/photo-1649590242138-2d56b3a48c5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80");
     background-size: cover;
-}
-
-.signupTitle {
+  }
+  
+  .registerTitle {
     font-size: 50px;
-}
-
-.signupForm {
+  }
+  
+  .registerForm {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-}
-
-.signupForm > label {
+  }
+  
+  .registerForm > label {
     margin: 10px 0;
-}
-
-.signupInput {
+  }
+  
+  .registerInput {
     padding: 10px;
     background-color: white;
     border: none;
-}
-
-.signupButton {
+  }
+  
+  .registerButton {
     margin-top: 20px;
     cursor: pointer;
     background-color: teal;
@@ -39,16 +40,16 @@
     color: white;
     border-radius: 10px;
     padding: 10px;
-}
-
-.loginButton {
+  }
+  
+  .registerLoginButton {
     position: absolute;
-    top: 70px;
+    top: 60px;
     right: 20px;
     background-color: lightcoral;
     cursor: pointer;
-    padding: 10px;
     border: none;
+    padding: 10px;
     color: white;
     border-radius: 10px;
-}
+  }
