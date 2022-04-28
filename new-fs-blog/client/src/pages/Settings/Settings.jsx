@@ -33,7 +33,7 @@ const Settings = () => {
             }
         }
         try {
-            await axios.put('/users'+user._id, updatedUser);
+            await axios.put('/users/' + user._id, updatedUser);
         } catch (err) {
             console.error(err);
         }
