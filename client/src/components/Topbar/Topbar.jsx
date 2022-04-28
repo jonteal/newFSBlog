@@ -2,6 +2,12 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./Topbar.css";
+import { RiFacebookBoxFill } from "react-icons/ri";
+import { RiPinterestFill } from "react-icons/ri";
+import { RiInstagramFill } from "react-icons/ri";
+import { RiTwitterFill } from "react-icons/ri";
+import { RiSearchLine } from "react-icons/ri";
+
 
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
@@ -13,10 +19,10 @@ export default function TopBar() {
   return (
     <div className="top">
       <div className="topLeft">
-        <i className="topIcon fab fa-facebook-square"></i>
-        <i className="topIcon fab fa-twitter-square"></i>
-        <i className="topIcon fab fa-pinterest-square"></i>
-        <i className="topIcon fab fa-instagram-square"></i>
+        <RiFacebookBoxFill className="topIcon" />
+        <RiTwitterFill className="topIcon" />
+        <RiPinterestFill className="topIcon" />
+        <RiInstagramFill className="topIcon" />
       </div>
       <div className="topCenter">
         <ul className="topList">
@@ -64,7 +70,7 @@ export default function TopBar() {
             </li>
           </ul>
         )}
-        <i className="topSearchIcon fas fa-search"></i>
+        <RiSearchLine className="topSearchIcon" />
       </div>
     </div>
   );

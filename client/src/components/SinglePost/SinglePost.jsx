@@ -4,6 +4,9 @@ import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./SinglePost.css";
+import { RiEditLine } from "react-icons/ri";
+import { RiDeleteBin6Line } from "react-icons/ri";
+
 
 export default function SinglePost() {
   const location = useLocation();
@@ -64,14 +67,14 @@ export default function SinglePost() {
             {title}
             {post.username === user?.username && (
               <div className="singlePostEdit">
-                <i
+                <RiEditLine
                   className="singlePostIcon far fa-edit"
                   onClick={() => setUpdateMode(true)}
-                ></i>
-                <i
+                />
+                <RiDeleteBin6Line
                   className="singlePostIcon far fa-trash-alt"
                   onClick={handleDelete}
-                ></i>
+                />
               </div>
             )}
           </h1>
