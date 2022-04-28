@@ -23,6 +23,8 @@ const SinglePost = () => {
         const getPost = async () => {
             const res = await axios.get('/posts/' + path);
             setPost(res.data);
+            setTitle(res.data.title);
+            setDesc(res.data.desc);
         };
         getPost();
     }, [path]);
@@ -38,6 +40,17 @@ const SinglePost = () => {
         }
     }
 
+    const handleUpdate = async () => {
+        try {
+            await axios.put(`/posts/${post._id}`, {
+                username: user.username, title, desc,
+            });
+            setUpdateMode(false);
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
     return (
         <div className="singlePost">
             <div className="singlePostWrapper">
@@ -47,12 +60,19 @@ const SinglePost = () => {
                         alt="" 
                         className="singlePostImg" 
                     />
-                )} {
-                    updateMode ? <input type="text" value={post.title} className="singlePostTitleInput" /> : (
-
+                )} 
+                {updateMode ? (
+                <input 
+                    type="text" 
+                    value={title} 
+                    className="singlePostTitleInput" 
+                    autoFocus
+                    onChange={(e) => setTitle(e.target.value)}
+                /> 
+                ) : (
 
                 <h1 className="singlePostTitle">
-                    {post.title}
+                    {title}
                     {post.username === user?.username && (
                     <div className="singlePostEdit">
                         <RiEditLine className="singlePostIcon" onClick={() => setUpdateMode(true)} />
@@ -74,9 +94,18 @@ const SinglePost = () => {
 
                 </div>
                 {updateMode ? (
-                    <textarea className="singlePostDescInput" />
+                    <textarea 
+                        className="singlePostDescInput" 
+                        value={desc} 
+                        onChange={(e) => setDesc(e.target.value)} 
+                    />
                 ) : (
-                    <p className="singlePostDesc">{post.desc}</p>
+                    <p className="singlePostDesc">{desc}</p>
+                )}
+                {updateMode && (
+                    <button className="singlePostButton" onClick={handleUpdate}>
+                        Update
+                    </button>
                 )}
             </div>
         </div>
