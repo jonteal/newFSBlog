@@ -13,10 +13,12 @@ const Settings = () => {
     const [success, setSuccess] = useState(false);
 
 
-    const { user } = useContext(Context);
+    const { user, dispatch } = useContext(Context);
+    const PF = "http://localhost:5000/images/"
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        dispatch({type: 'UPDATE_START'})
         const updatedUser = {
             userId: user._id,
             username, email, password
@@ -34,10 +36,13 @@ const Settings = () => {
             }
         }
         try {
-            await axios.put('/users/' + user._id, updatedUser);
+            const res = await axios.put('/users/' + user._id, updatedUser);
             setSuccess(true)
+            dispatch({ type: 'UPDATE_SUCCESS', payload: res.data })
+
         } catch (err) {
             console.error(err);
+            dispatch({ type: 'UPDATE_FAILURE' })
         }
     }
 
@@ -51,7 +56,7 @@ const Settings = () => {
                 <form className="settingsForm" onSubmit={handleSubmit}>
                     <label>Profile Picture</label>
                     <div className="settingsPP">
-                        <img src={user.profilePic} alt="sunny cliff" />
+                        <img src={file ? URL.createObjectURL(file): PF+user.profilePic} alt="" />
                         <label htmlFor="fileInput">
                             <RiUser3Fill className='settingsPPIcon' />
                         </label>
