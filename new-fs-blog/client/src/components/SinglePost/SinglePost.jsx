@@ -14,6 +14,9 @@ const SinglePost = () => {
     const [post, setPost] = useState({});
     const PF = 'http://localhost:5000/images/';
     const { user } = useContext(Context);
+    const [title, setTitle] = useState('');
+    const [desc, setDesc] = useState('');
+    const [updateMode, setUpdateMode] = useState(false);
 
 
     useEffect(() => {
@@ -44,16 +47,20 @@ const SinglePost = () => {
                         alt="" 
                         className="singlePostImg" 
                     />
-                )}
+                )} {
+                    updateMode ? <input type="text" value={post.title} className="singlePostTitleInput" /> : (
+
+
                 <h1 className="singlePostTitle">
                     {post.title}
                     {post.username === user?.username && (
                     <div className="singlePostEdit">
-                        <RiEditLine className="singlePostIcon" />
+                        <RiEditLine className="singlePostIcon" onClick={() => setUpdateMode(true)} />
                         <RiDeleteBin6Line className="singlePostIcon" onClick={handleDelete}/>
                     </div>
                     )}
                 </h1>
+                )}
                 <div className="singlePostInfo">
                     <span className="singlePostAuthor">
                         Author: 
@@ -66,7 +73,11 @@ const SinglePost = () => {
                     </span>
 
                 </div>
-                <p className="singlePostDesc">{post.desc}</p>
+                {updateMode ? (
+                    <textarea className="singlePostDescInput" />
+                ) : (
+                    <p className="singlePostDesc">{post.desc}</p>
+                )}
             </div>
         </div>
     );
