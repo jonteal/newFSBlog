@@ -10,6 +10,7 @@ const Settings = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [success, setSuccess] = useState(false);
 
 
     const { user } = useContext(Context);
@@ -34,6 +35,7 @@ const Settings = () => {
         }
         try {
             await axios.put('/users/' + user._id, updatedUser);
+            setSuccess(true)
         } catch (err) {
             console.error(err);
         }
@@ -67,6 +69,7 @@ const Settings = () => {
                     <label>Password</label>
                     <input type="password" onChange={e => setPassword(e.target.value)} />
                     <button className="settingsSubmit" type='submit'>Update</button>
+                    {success && <span style={{ color: "green", textAlign: "center", marginTop: "20px" }}>Profile has been updated...</span>}
                 </form>
             </div>
             <Sidebar />
